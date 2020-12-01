@@ -16,14 +16,16 @@ public abstract class AdventDay {
 	}
 
 	public Optional<String> testAndRun(Map<String, String> tests, String input) {
+		Optional<String> result = Optional.empty();
 
 		if (tests
 				.entrySet()
 				.stream()
 				.allMatch(this::test)) {
-			return run(input);
+			result = run(input);
 		}
-		return Optional.empty();
+		System.out.println(result.orElse("No Result!"));
+		return result;
 	}
 
 	private boolean test(Map.Entry<String, String> t) {
@@ -48,8 +50,8 @@ public abstract class AdventDay {
 	}
 
 	public Optional<String> run(String fileName) {
-		return runConcrete(fileName);
+		return Optional.ofNullable(runConcrete(fileName));
 	}
 
-	protected abstract Optional<String> runConcrete(String fileName);
+	protected abstract String runConcrete(String fileName);
 }

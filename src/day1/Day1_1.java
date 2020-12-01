@@ -1,7 +1,6 @@
 package day1;
 
 import java.util.HashSet;
-import java.util.Optional;
 import java.util.Set;
 
 import common.AdventDay;
@@ -16,16 +15,16 @@ public class Day1_1 extends AdventDay {
 	}
 
 	@Override
-	protected Optional<String> runConcrete(String fileName) {
+	protected String runConcrete(String fileName) {
 		Set<Integer> values = new HashSet<>();
 
 		for (String v : InputReader.readLines(1, fileName)) {
 			int n = Integer.parseInt(v);
 			if (values.contains(TARGET - n)) {
-				return Optional.of(Integer.toString(n * (TARGET - n)));
+				return Integer.toString(n * (TARGET - n));
 			}
 			values.add(n);
 		}
-		return Optional.empty();
+		return null;
 	}
 }
