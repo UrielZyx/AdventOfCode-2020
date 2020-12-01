@@ -6,7 +6,7 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import FileIO.InputReader;
+import common.InputReader;
 
 public class Day1_2 {
 

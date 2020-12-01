@@ -3,7 +3,7 @@ package day1;
 import java.util.HashSet;
 import java.util.Set;
 
-import FileIO.InputReader;
+import common.InputReader;
 
 public class Day1_1 {
 
