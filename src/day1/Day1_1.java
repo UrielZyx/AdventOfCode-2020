@@ -13,7 +13,7 @@ public class Day1_1 {
 	public static void main(String[] args) {
 		Set<Integer> values = new HashSet<>();
 
-		for (String v : InputReader.read(1, INPUT)) {
+		for (String v : InputReader.readLines(1, INPUT)) {
 			int n = Integer.parseInt(v);
 			if (values.contains(TARGET - n)) {
 				System.out.println(n * (TARGET - n));

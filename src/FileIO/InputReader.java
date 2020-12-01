@@ -13,11 +13,11 @@ public class InputReader {
 	public static final String PATH = "C:\\urm\\advent-of-code\\AdventOfCode-2020\\src\\";
 	public static final String DAY = "day";
 
-	public static List<String> read(int day, String fileName) {
-		return read(DAY + day + File.separator + fileName);
+	public static List<String> readLines(int day, String fileName) {
+		return readLines(DAY + day + File.separator + fileName);
 	}
 
-	public static List<String> read(String fileName) {
+	public static List<String> readLines(String fileName) {
 		try (BufferedReader reader = new BufferedReader(new FileReader(PATH + fileName))) {
 			return reader.lines().collect(Collectors.toList());
 		} catch (IOException e) {

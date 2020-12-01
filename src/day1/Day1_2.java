@@ -17,7 +17,7 @@ public class Day1_2 {
 		Set<Integer> singles = new HashSet<>();
 		Map<Integer, Integer> doubles = new HashMap<>();
 
-		for (String v : InputReader.read(1, INPUT)) {
+		for (String v : InputReader.readLines(1, INPUT)) {
 			int n = Integer.parseInt(v);
 			int m = TARGET - n;
 			if (doubles.containsKey(m)) {
