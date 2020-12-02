@@ -7,11 +7,6 @@ public class Day2_2 extends MapReduceAdventDay {
 	private int count = 0;
 
 	@Override
-	protected void clear() {
-		count = 0;
-	}
-
-	@Override
 	protected int getDay() {
 		return 2;
 	}

@@ -38,13 +38,6 @@ public class Day1_2 extends MapReduceAdventDay {
 	}
 
 	@Override
-	protected void clear() {
-		singles = new HashSet<>();
-		doubles = new HashMap<>();
-		result = null;
-	}
-
-	@Override
 	protected int getDay() {
 		return 1;
 	}

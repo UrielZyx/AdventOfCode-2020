@@ -4,14 +4,11 @@ public abstract class MapReduceAdventDay extends AdventDay {
 
 	@Override
 	protected String runConcrete(String fileName) {
-		clear();
 		for (String l : InputReader.readLines(getDay(), fileName)) {
 			processLine(l);
 		}
 		return processResults();
 	}
-
-	protected abstract void clear();
 
 	protected abstract int getDay();
 

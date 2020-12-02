@@ -50,7 +50,14 @@ public abstract class AdventDay {
 	}
 
 	public Optional<String> run(String fileName) {
-		return Optional.ofNullable(runConcrete(fileName));
+		try {
+			return Optional.ofNullable(this.getClass().newInstance().runConcrete(fileName));
+		} catch (InstantiationException e) {
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		}
+		return Optional.empty();
 	}
 
 	protected abstract String runConcrete(String fileName);
