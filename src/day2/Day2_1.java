@@ -9,6 +9,11 @@ public class Day2_1 extends MapReduceAdventDay {
 	private int count = 0;
 
 	@Override
+	protected void clear() {
+		count = 0;
+	}
+
+	@Override
 	protected int getDay() {
 		return 2;
 	}
@@ -35,5 +40,4 @@ public class Day2_1 extends MapReduceAdventDay {
 	protected String processResults() {
 		return Integer.toString(count);
 	}
-
 }
