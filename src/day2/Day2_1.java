@@ -14,7 +14,7 @@ public class Day2_1 extends MapReduceAdventDay {
 	}
 
 	public static void main(String[] args) {
-		new Day2_1().testAndRun("2");
+		new Day2_1().print();
 	}
 
 	@Override

@@ -12,7 +12,7 @@ public class Day1_1 extends MapReduceAdventDay {
 	String result = null;
 
 	public static void main(String[] args) {
-		new Day1_1().testAndRun("514579");
+		new Day1_1().print();
 	}
 
 	@Override
