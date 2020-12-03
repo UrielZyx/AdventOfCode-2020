@@ -5,14 +5,19 @@ import java.util.Optional;
 public abstract class AdventDay {
 
 	public static final String INPUT = "input.txt";
-	public static final String TEST_INPUT = "test input.txt";
+	public static final String TEST_INPUT = "test input";
+	public static final String TXT_SUFFIX = ".txt";
 
 	public void print() {
 		System.out.println(run().orElse("No result!"));
 	}
 
-	public Optional<String> test() {
-		return run(TEST_INPUT);
+	public Optional<String> test(String i) {
+		return run(testInputFileName(i));
+	}
+
+	private String testInputFileName(String i) {
+		return TEST_INPUT + i + TXT_SUFFIX;
 	}
 
 	public Optional<String> run() {

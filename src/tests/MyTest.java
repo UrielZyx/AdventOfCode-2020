@@ -5,6 +5,7 @@ import static org.junit.Assert.assertEquals;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
 import common.AdventDay;
@@ -18,13 +19,24 @@ public class MyTest {
 		Map<Class<? extends AdventDay>, List<String>> testOutputs = out.getTestOutputs();
 		for (Class<? extends AdventDay> day : testOutputs.keySet()) {
 			List<String> results = testOutputs.get(day);
-			testSingle(day, results.get(0));
+			if (results.size() == 1) {
+				testSingle(day, results.get(0));
+			} else {
+				for (int i = 0; i < results.size(); i++) {
+					testSingle(day, results.get(i), String.valueOf(i));
+				}
+			}
 		}
 	}
 
 	private void testSingle(Class<? extends AdventDay> day, String expected)
 			throws InstantiationException, IllegalAccessException {
-		String result = day.newInstance().test().orElse(null);
+		testSingle(day, expected, StringUtils.EMPTY);
+	}
+
+	private void testSingle(Class<? extends AdventDay> day, String expected, String i)
+			throws InstantiationException, IllegalAccessException {
+		String result = day.newInstance().test(i).orElse(null);
 		assertEquals("Bug in " + day.getSimpleName() + "tests", expected, result);
 	}
 
