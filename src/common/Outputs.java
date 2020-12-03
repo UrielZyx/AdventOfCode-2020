@@ -1,6 +1,8 @@
 package common;
 
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import day1.Day1_1;
@@ -12,10 +14,10 @@ import day3.Day3_2;
 
 public class Outputs {
 
-	private Map<Class<? extends AdventDay>, String> testOutputs = new HashMap<>();
+	private Map<Class<? extends AdventDay>, List<String>> testOutputs = new HashMap<>();
 	private Map<Class<? extends AdventDay>, String> outputs = new HashMap<>();
 
-	public Map<Class<? extends AdventDay>, String> getTestOutputs() {
+	public Map<Class<? extends AdventDay>, List<String>> getTestOutputs() {
 		return testOutputs;
 	}
 
@@ -24,12 +26,12 @@ public class Outputs {
 	}
 
 	public Outputs() {
-		testOutputs.put(Day1_1.class, "514579");
-		testOutputs.put(Day1_2.class, "241861950");
-		testOutputs.put(Day2_1.class, "2");
-		testOutputs.put(Day2_2.class, "1");
-		testOutputs.put(Day3_1.class, "7");
-		testOutputs.put(Day3_2.class, "336");
+		testOutputs.put(Day1_1.class, Arrays.asList("514579"));
+		testOutputs.put(Day1_2.class, Arrays.asList("241861950"));
+		testOutputs.put(Day2_1.class, Arrays.asList("2"));
+		testOutputs.put(Day2_2.class, Arrays.asList("1"));
+		testOutputs.put(Day3_1.class, Arrays.asList("7"));
+		testOutputs.put(Day3_2.class, Arrays.asList("336"));
 
 		outputs.put(Day1_1.class, "1007104");
 		outputs.put(Day1_2.class, "18847752");

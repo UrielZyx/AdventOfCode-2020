@@ -2,6 +2,7 @@ package tests;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.List;
 import java.util.Map;
 
 import org.junit.Test;
@@ -14,11 +15,17 @@ public class MyTest {
 	@Test
 	public void testOutputsOfTests() throws InstantiationException, IllegalAccessException {
 		Outputs out = new Outputs();
-		Map<Class<? extends AdventDay>, String> testOutputs = out.getTestOutputs();
+		Map<Class<? extends AdventDay>, List<String>> testOutputs = out.getTestOutputs();
 		for (Class<? extends AdventDay> day : testOutputs.keySet()) {
-			String result = day.newInstance().test().orElse(null);
-			assertEquals("Bug in " + day.getSimpleName() + "tests", testOutputs.get(day), result);
+			List<String> results = testOutputs.get(day);
+			testSingle(day, results.get(0));
 		}
+	}
+
+	private void testSingle(Class<? extends AdventDay> day, String expected)
+			throws InstantiationException, IllegalAccessException {
+		String result = day.newInstance().test().orElse(null);
+		assertEquals("Bug in " + day.getSimpleName() + "tests", expected, result);
 	}
 
 	@Test
