@@ -1,10 +1,11 @@
-package common;
+package tests;
 
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import common.AdventDay;
 import day1.Day1_1;
 import day1.Day1_2;
 import day2.Day2_1;
