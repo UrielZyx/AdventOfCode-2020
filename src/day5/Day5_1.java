@@ -1,8 +1,8 @@
 package day5;
 
-import common.MapReduceAdventDay;
+import common.LineProcessingAdventDay;
 
-public class Day5_1 extends MapReduceAdventDay {
+public class Day5_1 extends LineProcessingAdventDay {
 
 	protected int maxId = 0;
 

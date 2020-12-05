@@ -3,9 +3,9 @@ package day1;
 import java.util.HashSet;
 import java.util.Set;
 
-import common.MapReduceAdventDay;
+import common.LineProcessingAdventDay;
 
-public class Day1_1 extends MapReduceAdventDay {
+public class Day1_1 extends LineProcessingAdventDay {
 
 	protected static final int TARGET = 2020;
 	protected Set<Integer> values = new HashSet<>();

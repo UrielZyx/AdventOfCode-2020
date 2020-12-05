@@ -1,6 +1,6 @@
 package common;
 
-public abstract class MapReduceAdventDay extends AdventDay {
+public abstract class LineProcessingAdventDay extends AdventDay {
 
 	@Override
 	protected String runConcrete(String fileName) {
