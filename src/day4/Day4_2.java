@@ -4,14 +4,14 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-public class Day4_2 extends Day4 {
+public class Day4_2 extends Day4_1 {
 
 	public static void main(String[] args) {
 		new Day4_2().print();
 	}
 
 	@Override
-	protected boolean valid(Map<String, String> passport) {
+	protected boolean isValid(Map<String, String> passport) {
 		passport.remove("cid");
 		if (passport.size() != 7) {
 			return false;

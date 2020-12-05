@@ -7,9 +7,9 @@ import common.MapReduceAdventDay;
 
 public class Day1_1 extends MapReduceAdventDay {
 
-	private static final int TARGET = 2020;
-	Set<Integer> values = new HashSet<>();
-	String result = null;
+	protected static final int TARGET = 2020;
+	protected Set<Integer> values = new HashSet<>();
+	protected String result = null;
 
 	public static void main(String[] args) {
 		new Day1_1().print();

@@ -6,7 +6,7 @@ import common.MapReduceAdventDay;
 
 public class Day2_1 extends MapReduceAdventDay {
 
-	private int count = 0;
+	protected int count = 0;
 
 	@Override
 	protected int getDay() {
@@ -24,6 +24,10 @@ public class Day2_1 extends MapReduceAdventDay {
 		int max = Integer.parseInt(parts[1]);
 		char letter = parts[2].charAt(0);
 		String password = parts[4];
+		checkPassword(min, max, letter, password);
+	}
+
+	protected void checkPassword(int min, int max, char letter, String password) {
 		int matches = StringUtils.countMatches(password, letter);
 
 		if (matches >= min && matches <= max) {
