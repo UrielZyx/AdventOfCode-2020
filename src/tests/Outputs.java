@@ -15,6 +15,7 @@ import day3.Day3_2;
 import day4.Day4_1;
 import day4.Day4_2;
 import day5.Day5_1;
+import day5.Day5_2;
 
 public class Outputs {
 
@@ -48,5 +49,6 @@ public class Outputs {
 		outputs.put(Day4_1.class, "213");
 		outputs.put(Day4_2.class, "147");
 		outputs.put(Day5_1.class, "944");
+		outputs.put(Day5_2.class, "554");
 	}
 }

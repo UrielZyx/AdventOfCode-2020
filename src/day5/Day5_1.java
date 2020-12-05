@@ -4,7 +4,7 @@ import common.MapReduceAdventDay;
 
 public class Day5_1 extends MapReduceAdventDay {
 
-	private int maxId = 0;
+	protected int maxId = 0;
 
 	@Override
 	protected int getDay() {
@@ -23,7 +23,7 @@ public class Day5_1 extends MapReduceAdventDay {
 		}
 	}
 
-	private int getSeatId(String line) {
+	protected int getSeatId(String line) {
 		String row = line.substring(0, 7).replace('F', '0').replace('B', '1');
 		String seat = line.substring(7).replace('L', '0').replace('R', '1');
 		return 8 * Integer.parseInt(row, 2) + Integer.parseInt(seat, 2);
