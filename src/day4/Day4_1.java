@@ -3,11 +3,9 @@ package day4;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.commons.lang3.StringUtils;
+import common.LineGroupAdventDay;
 
-import common.LineAdventDay;
-
-public class Day4_1 extends LineAdventDay {
+public class Day4_1 extends LineGroupAdventDay {
 
 	int count = 0;
 	Map<String, String> passport = new HashMap<>();
@@ -22,12 +20,7 @@ public class Day4_1 extends LineAdventDay {
 	}
 
 	@Override
-	protected void processLine(String line) {
-		if (StringUtils.isBlank(line)) {
-			validatePassport();
-			passport = new HashMap<>();
-			return;
-		}
+	protected void addLine(String line) {
 		for (String pair : line.split(" ")) {
 			String[] keyValue = pair.split(":");
 			passport.put(keyValue[0], keyValue[1]);
@@ -35,8 +28,14 @@ public class Day4_1 extends LineAdventDay {
 	}
 
 	@Override
-	protected String processResults() {
+	protected void processGroup() {
 		validatePassport();
+		passport = new HashMap<>();
+		return;
+	}
+
+	@Override
+	protected String processFinalResults() {
 		return String.valueOf(count);
 	}
 
