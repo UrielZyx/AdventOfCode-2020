@@ -3,9 +3,9 @@ package day3;
 import java.util.ArrayList;
 import java.util.List;
 
-import common.LineProcessingAdventDay;
+import common.LineAdventDay;
 
-public class Day3_1 extends LineProcessingAdventDay {
+public class Day3_1 extends LineAdventDay {
 
 	public static final Character TREE = '#';
 	public static final Character FREE = '.';

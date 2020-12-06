@@ -2,9 +2,9 @@ package day2;
 
 import org.apache.commons.lang3.StringUtils;
 
-import common.LineProcessingAdventDay;
+import common.LineAdventDay;
 
-public class Day2_1 extends LineProcessingAdventDay {
+public class Day2_1 extends LineAdventDay {
 
 	protected int count = 0;
 

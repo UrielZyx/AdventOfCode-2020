@@ -5,9 +5,9 @@ import java.util.Map;
 
 import org.apache.commons.lang3.StringUtils;
 
-import common.LineProcessingAdventDay;
+import common.LineAdventDay;
 
-public class Day4_1 extends LineProcessingAdventDay {
+public class Day4_1 extends LineAdventDay {
 
 	int count = 0;
 	Map<String, String> passport = new HashMap<>();

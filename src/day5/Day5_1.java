@@ -1,8 +1,8 @@
 package day5;
 
-import common.LineProcessingAdventDay;
+import common.LineAdventDay;
 
-public class Day5_1 extends LineProcessingAdventDay {
+public class Day5_1 extends LineAdventDay {
 
 	protected int maxId = 0;
 
