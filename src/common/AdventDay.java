@@ -12,6 +12,14 @@ public abstract class AdventDay {
 		System.out.println(run().orElse("No result!"));
 	}
 
+	public Optional<String> test() {
+		return test(0);
+	}
+
+	public Optional<String> test(int i) {
+		return test(String.valueOf(i));
+	}
+
 	public Optional<String> test(String i) {
 		return run(testInputFileName(i));
 	}

@@ -18,8 +18,8 @@ import common.LineAdventDay;
 
 public class Day7_1 extends LineAdventDay {
 
-	private static final String SHINY_GOLD = "shiny gold";
 	private static final String BAG = "bag";
+	protected static final String SHINY_GOLD = "shiny gold";
 	Multimap<String, String> rulesByContained = ArrayListMultimap.create();
 	Pattern p = Pattern.compile("\\d+");
 
@@ -36,14 +36,19 @@ public class Day7_1 extends LineAdventDay {
 	protected void processLine(String line) {
 		int end = line.indexOf(BAG);
 		String conatining = line.substring(0, end).trim();
-		List<String> contained = new ArrayList<>();
+		List<BagDescription> contained = new ArrayList<>();
 		for (String endOfLine = nextNumber(line); StringUtils
 				.isNotBlank(endOfLine); endOfLine = nextNumber(endOfLine)) {
 			int begin = endOfLine.indexOf(' ');
 			end = endOfLine.indexOf(BAG);
-			contained.add(endOfLine.substring(begin, end).trim());
+			contained.add(BagDescription.of(Integer.parseInt(endOfLine.substring(0, begin)),
+					endOfLine.substring(begin, end).trim()));
 		}
-		contained.stream().forEach(c -> rulesByContained.put(c, conatining));
+		contained.stream().forEach(b -> processBag(conatining, b));
+	}
+
+	protected void processBag(String conatining, BagDescription b) {
+		rulesByContained.put(b.color, conatining);
 	}
 
 	private String nextNumber(String line) {
@@ -52,7 +57,6 @@ public class Day7_1 extends LineAdventDay {
 			if (m.start() > 0) {
 				return line.substring(m.start());
 			}
-			;
 		}
 		return StringUtils.EMPTY;
 	}

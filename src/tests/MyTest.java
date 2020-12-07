@@ -18,12 +18,12 @@ public class MyTest {
 		for (Class<? extends AdventDay> day : testOutputs.keySet()) {
 			List<String> results = testOutputs.get(day);
 			for (int i = 0; i < results.size(); i++) {
-				testSingle(day, results.get(i), String.valueOf(i));
+				testSingle(day, results.get(i), i);
 			}
 		}
 	}
 
-	private void testSingle(Class<? extends AdventDay> day, String expected, String i)
+	private void testSingle(Class<? extends AdventDay> day, String expected, int i)
 			throws InstantiationException, IllegalAccessException {
 		String result = day.newInstance().test(i).orElse(null);
 		assertEquals("Bug in " + day.getSimpleName() + "tests", expected, result);

@@ -61,5 +61,6 @@ public class Outputs {
 		outputs.put(Day6_1.class, "6351");
 		outputs.put(Day6_2.class, "3143");
 		outputs.put(Day7_1.class, "103");
+		outputs.put(Day7_2.class, "1469");
 	}
 }
