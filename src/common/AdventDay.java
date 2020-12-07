@@ -8,6 +8,8 @@ public abstract class AdventDay {
 	public static final String TEST_INPUT = "test input - ";
 	public static final String TXT_SUFFIX = ".txt";
 
+	protected abstract int getDay();
+
 	public void print() {
 		System.out.println(run().orElse("No result!"));
 	}

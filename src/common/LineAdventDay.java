@@ -10,8 +10,6 @@ public abstract class LineAdventDay extends AdventDay {
 		return processResults();
 	}
 
-	protected abstract int getDay();
-
 	protected abstract void processLine(String line);
 
 	protected abstract String processResults();
