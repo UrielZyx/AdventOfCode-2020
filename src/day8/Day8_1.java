@@ -23,16 +23,19 @@ public class Day8_1 extends LineAdventDay {
 
 	@Override
 	protected String processLines(List<String> lines) {
-		int accumulator = 0, i = 0;
-		Set<Integer> visited = new HashSet<>();
-		List<Instruction> instructions = lines
+		return runProgram(getInstructions(lines));
+	}
+
+	protected List<Instruction> getInstructions(List<String> lines) {
+		return lines
 				.stream()
 				.map(Instruction::create)
 				.collect(Collectors.toList());
-		return runProgram(accumulator, i, visited, instructions);
 	}
 
-	private String runProgram(int accumulator, int i, Set<Integer> visited, List<Instruction> instructions) {
+	protected String runProgram(List<Instruction> instructions) {
+		int accumulator = 0, i = 0;
+		Set<Integer> visited = new HashSet<>();
 		while (i != instructions.size()) {
 			if (visited.contains(i)) {
 				return stuckInLoop(accumulator);
