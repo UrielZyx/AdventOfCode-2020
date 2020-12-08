@@ -3,9 +3,9 @@ package day1;
 import java.util.HashSet;
 import java.util.Set;
 
-import common.LineAdventDay;
+import common.SerialLineAdventDay;
 
-public class Day1_1 extends LineAdventDay {
+public class Day1_1 extends SerialLineAdventDay {
 
 	protected static final int TARGET = 2020;
 	protected Set<Integer> values = new HashSet<>();

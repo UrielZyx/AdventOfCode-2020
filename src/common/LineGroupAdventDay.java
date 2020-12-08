@@ -2,7 +2,7 @@ package common;
 
 import org.apache.commons.lang3.StringUtils;
 
-public abstract class LineGroupAdventDay extends LineAdventDay {
+public abstract class LineGroupAdventDay extends SerialLineAdventDay {
 
 	@Override
 	protected void processLine(String line) {

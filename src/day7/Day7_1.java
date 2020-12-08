@@ -14,9 +14,9 @@ import org.apache.commons.lang3.StringUtils;
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.Multimap;
 
-import common.LineAdventDay;
+import common.SerialLineAdventDay;
 
-public class Day7_1 extends LineAdventDay {
+public class Day7_1 extends SerialLineAdventDay {
 
 	private static final String BAG = "bag";
 	protected static final String SHINY_GOLD = "shiny gold";

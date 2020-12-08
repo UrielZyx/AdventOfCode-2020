@@ -2,9 +2,9 @@ package day2;
 
 import org.apache.commons.lang3.StringUtils;
 
-import common.LineAdventDay;
+import common.SerialLineAdventDay;
 
-public class Day2_1 extends LineAdventDay {
+public class Day2_1 extends SerialLineAdventDay {
 
 	protected int count = 0;
 

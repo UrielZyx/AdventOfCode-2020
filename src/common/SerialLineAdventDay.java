@@ -1,6 +1,6 @@
 package common;
 
-public abstract class LineAdventDay extends AdventDay {
+public abstract class SerialLineAdventDay extends AdventDay {
 
 	@Override
 	protected String runConcrete(String fileName) {
