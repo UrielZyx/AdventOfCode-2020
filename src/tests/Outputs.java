@@ -25,6 +25,15 @@ import day8.Day8_2;
 
 public class Outputs {
 
+	private static Outputs instance = null;
+
+	public static Outputs getInstance() {
+		if (instance == null) {
+			instance = new Outputs();
+		}
+		return instance;
+	}
+
 	private Map<Class<? extends AdventDay>, List<String>> testOutputs = new HashMap<>();
 	private Map<Class<? extends AdventDay>, String> outputs = new HashMap<>();
 
@@ -36,7 +45,7 @@ public class Outputs {
 		return outputs;
 	}
 
-	public Outputs() {
+	private Outputs() {
 		testOutputs.put(Day1_1.class, Arrays.asList("514579"));
 		testOutputs.put(Day1_2.class, Arrays.asList("241861950"));
 		testOutputs.put(Day2_1.class, Arrays.asList("2"));

@@ -24,7 +24,7 @@ public class Day7_1 extends SerialLineAdventDay {
 	Pattern p = Pattern.compile("\\d+");
 
 	public static void main(String[] args) {
-		new Day7_1().print();
+		new Day7_1().testAndPrint();
 	}
 
 	@Override

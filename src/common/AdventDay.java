@@ -2,6 +2,9 @@ package common;
 
 import java.util.Optional;
 
+import tests.MyTest;
+import tests.Outputs;
+
 public abstract class AdventDay {
 
 	public static final String INPUT = "input.txt";
@@ -10,7 +13,13 @@ public abstract class AdventDay {
 
 	protected abstract int getDay();
 
-	public void print() {
+	public void testAndPrint() {
+		try {
+			new MyTest().runTests(this.getClass(), Outputs.getInstance().getTestOutputs().get(this.getClass()));
+		} catch (InstantiationException | IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		System.out.println(run().orElse("No result!"));
 	}
 

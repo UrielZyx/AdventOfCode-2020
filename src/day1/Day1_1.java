@@ -12,7 +12,7 @@ public class Day1_1 extends SerialLineAdventDay {
 	protected String result = null;
 
 	public static void main(String[] args) {
-		new Day1_1().print();
+		new Day1_1().testAndPrint();
 	}
 
 	@Override

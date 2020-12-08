@@ -12,7 +12,7 @@ public class Day1_2 extends Day1_1 {
 	Map<Integer, Integer> doubles = new HashMap<>();
 
 	public static void main(String[] args) {
-		new Day1_2().print();
+		new Day1_2().testAndPrint();
 	}
 
 	@Override

@@ -12,7 +12,7 @@ public class Day7_2 extends Day7_1 {
 	Map<String, Integer> results = new HashMap<>();
 
 	public static void main(String[] args) {
-		new Day7_2().print();
+		new Day7_2().testAndPrint();
 	}
 
 	@Override

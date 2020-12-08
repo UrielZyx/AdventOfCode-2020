@@ -16,7 +16,7 @@ public class Day4_1 extends LineGroupAdventDay {
 	}
 
 	public static void main(String[] args) {
-		new Day4_1().print();
+		new Day4_1().testAndPrint();
 	}
 
 	@Override

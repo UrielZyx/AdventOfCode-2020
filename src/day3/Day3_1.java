@@ -17,7 +17,7 @@ public class Day3_1 extends SerialLineAdventDay {
 	}
 
 	public static void main(String[] args) {
-		new Day3_1().print();
+		new Day3_1().testAndPrint();
 	}
 
 	@Override

@@ -8,7 +8,7 @@ public class Day6_2 extends Day6_1 {
 	boolean newGroup = true;
 
 	public static void main(String[] args) {
-		new Day6_2().print();
+		new Day6_2().testAndPrint();
 	}
 
 	@Override

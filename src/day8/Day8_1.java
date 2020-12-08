@@ -17,7 +17,7 @@ public class Day8_1 extends LineAdventDay {
 	}
 
 	public static void main(String[] args) {
-		new Day8_1().print();
+		new Day8_1().testAndPrint();
 		// System.out.println(new Day8_1().test());
 	}
 

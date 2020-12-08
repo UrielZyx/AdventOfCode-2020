@@ -3,7 +3,7 @@ package day3;
 public class Day3_2 extends Day3_1 {
 
 	public static void main(String[] args) {
-		new Day3_2().print();
+		new Day3_2().testAndPrint();
 	}
 
 	@Override

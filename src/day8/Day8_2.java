@@ -7,7 +7,7 @@ import java.util.List;
 public class Day8_2 extends Day8_1 {
 
 	public static void main(String[] args) {
-		new Day8_2().print();
+		new Day8_2().testAndPrint();
 	}
 
 	@Override

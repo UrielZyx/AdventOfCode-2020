@@ -7,7 +7,7 @@ import java.util.Set;
 public class Day4_2 extends Day4_1 {
 
 	public static void main(String[] args) {
-		new Day4_2().print();
+		new Day4_2().testAndPrint();
 	}
 
 	@Override

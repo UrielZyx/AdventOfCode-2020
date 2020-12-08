@@ -7,7 +7,7 @@ public class Day5_2 extends Day5_1 {
 	Set<Integer> seats = new HashSet<>();
 
 	public static void main(String[] args) {
-		new Day5_2().print();
+		new Day5_2().testAndPrint();
 	}
 
 	@Override
