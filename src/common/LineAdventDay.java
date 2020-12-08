@@ -10,5 +10,5 @@ public abstract class LineAdventDay extends AdventDay {
 		return processLines(lines);
 	}
 
-	abstract String processLines(List<String> lines);
+	protected abstract String processLines(List<String> lines);
 }

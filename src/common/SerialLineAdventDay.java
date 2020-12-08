@@ -12,8 +12,8 @@ public abstract class SerialLineAdventDay extends LineAdventDay {
 		return processResults();
 	}
 
-	abstract void processLine(String line);
+	protected abstract void processLine(String line);
 
-	abstract String processResults();
+	protected abstract String processResults();
 
 }

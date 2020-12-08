@@ -19,9 +19,9 @@ public abstract class LineGroupAdventDay extends SerialLineAdventDay {
 		return processFinalResults();
 	}
 
-	abstract void addLine(String line);
+	protected abstract void addLine(String line);
 
-	abstract void processGroup();
+	protected abstract void processGroup();
 
-	abstract String processFinalResults();
+	protected abstract String processFinalResults();
 }
