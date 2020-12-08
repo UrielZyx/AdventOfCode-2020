@@ -45,5 +45,5 @@ public abstract class AdventDay {
 		return Optional.empty();
 	}
 
-	protected abstract String runConcrete(String fileName);
+	abstract String runConcrete(String fileName);
 }

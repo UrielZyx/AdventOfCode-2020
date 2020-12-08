@@ -10,6 +10,6 @@ public abstract class MapAdventDay extends AdventDay {
 		return processMap(map);
 	}
 
-	protected abstract String processMap(List<List<Character>> map);
+	abstract String processMap(List<List<Character>> map);
 
 }

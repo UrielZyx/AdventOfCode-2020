@@ -1,17 +1,19 @@
 package common;
 
-public abstract class SerialLineAdventDay extends AdventDay {
+import java.util.List;
+
+public abstract class SerialLineAdventDay extends LineAdventDay {
 
 	@Override
-	protected String runConcrete(String fileName) {
-		for (String l : InputReader.readLines(getDay(), fileName)) {
+	protected String processLines(List<String> lines) {
+		for (String l : lines) {
 			processLine(l);
 		}
 		return processResults();
 	}
 
-	protected abstract void processLine(String line);
+	abstract void processLine(String line);
 
-	protected abstract String processResults();
+	abstract String processResults();
 
 }
