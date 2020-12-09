@@ -1,5 +1,5 @@
 
-package day1;
+package day01;
 
 import java.util.HashMap;
 import java.util.HashSet;

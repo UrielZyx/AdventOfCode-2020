@@ -6,24 +6,24 @@ import java.util.List;
 import java.util.Map;
 
 import common.AdventDay;
-import day1.Day1_1;
-import day1.Day1_2;
-import day2.Day2_1;
-import day2.Day2_2;
-import day3.Day3_1;
-import day3.Day3_2;
-import day4.Day4_1;
-import day4.Day4_2;
-import day5.Day5_1;
-import day5.Day5_2;
-import day6.Day6_1;
-import day6.Day6_2;
-import day7.Day7_1;
-import day7.Day7_2;
-import day8.Day8_1;
-import day8.Day8_2;
-import day9.Day9_1;
-import day9.Day9_2;
+import day01.Day1_1;
+import day01.Day1_2;
+import day02.Day2_1;
+import day02.Day2_2;
+import day03.Day3_1;
+import day03.Day3_2;
+import day04.Day4_1;
+import day04.Day4_2;
+import day05.Day5_1;
+import day05.Day5_2;
+import day06.Day6_1;
+import day06.Day6_2;
+import day07.Day7_1;
+import day07.Day7_2;
+import day08.Day8_1;
+import day08.Day8_2;
+import day09.Day9_1;
+import day09.Day9_2;
 
 public class Outputs {
 

@@ -1,6 +1,6 @@
-package day8;
+package day08;
 
-import static day8.Instruction.Command.*;
+import static day08.Instruction.Command.*;
 
 import java.util.HashSet;
 import java.util.List;

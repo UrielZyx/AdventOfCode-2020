@@ -1,4 +1,4 @@
-package day3;
+package day03;
 
 public class Day3_2 extends Day3_1 {
 
