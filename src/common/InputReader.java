@@ -14,7 +14,7 @@ public class InputReader {
 	public static final String DAY = "day";
 
 	public static List<String> readLines(int dayNumber, String fileName) {
-		return readLines(filaPath(dayNumber, fileName));
+		return readLines(fileName(dayNumber, fileName));
 	}
 
 	public static List<String> readLines(String fileName) {
@@ -27,7 +27,7 @@ public class InputReader {
 	}
 
 	public static List<List<Character>> readMap(int dayNumber, String fileName) {
-		return readMap(filaPath(dayNumber, fileName));
+		return readMap(fileName(dayNumber, fileName));
 	}
 
 	public static List<List<Character>> readMap(String fileName) {
@@ -45,7 +45,12 @@ public class InputReader {
 		return new ArrayList<>();
 	}
 
-	private static String filaPath(int dayNumber, String fileName) {
-		return DAY + dayNumber + File.separator + fileName;
+	private static String fileName(int dayNumber, String fileName) {
+		return DAY + pad(dayNumber) + File.separator + fileName;
+	}
+
+	private static String pad(int dayNumber) {
+		String padding = dayNumber < 10 ? "0" : "";
+		return padding + dayNumber;
 	}
 }
