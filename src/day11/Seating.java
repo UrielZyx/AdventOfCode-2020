@@ -8,19 +8,35 @@ import java.util.stream.Collectors;
 
 import org.javatuples.Pair;
 
+import com.google.common.collect.ArrayListMultimap;
+import com.google.common.collect.Multimap;
+
 public class Seating {
+
+	protected enum Direction {
+		N(0, 1), E(1, 0), W(-1, 0), S(0, -1), NE(1, 1), NW(-1, 1), SE(1, -1), SW(-1, -1);
+
+		public int i, j;
+
+		private Direction(int i, int j) {
+			this.i = i;
+			this.j = j;
+		}
+	}
 
 	protected final static char FLOOR = '.';
 	protected final static char SEAT = 'L';
 	protected final static char TAKEN = '#';
 	protected final static char BORDER = 'X';
 
-	int height, width;
-	List<List<Character>> seatings = new ArrayList<>();
-	int limit = 4;
-	boolean lineOfSight = false;
+	protected int height, width, limit;
+	protected List<List<Character>> seatings = new ArrayList<>();
+	protected Multimap<Pair<Integer, Integer>, Pair<Integer, Integer>> adjacencies = ArrayListMultimap.create();
 
-	public Seating(List<List<Character>> map) {
+	public Seating(List<List<Character>> map, int limit) {
+
+		this.limit = limit;
+
 		height = map.size();
 		width = map.get(0).size();
 
@@ -30,6 +46,22 @@ public class Seating {
 				seatings.get(i).add(map.get(i).get(j));
 			}
 		}
+
+		calculateAdjacencies();
+	}
+
+	protected void calculateAdjacencies() {
+		for (int i = 0; i < height; i++) {
+			for (int j = 0; j < width; j++) {
+				for (Direction dir : Direction.values()) {
+					adjacencies.put(Pair.with(i, j), getAdjacency(i, j, dir));
+				}
+			}
+		}
+	}
+
+	protected Pair<Integer, Integer> getAdjacency(int i, int j, Direction dir) {
+		return Pair.with(i + dir.i, j + dir.j);
 	}
 
 	public String getState() {
@@ -70,21 +102,17 @@ public class Seating {
 	}
 
 	private int countAdjacentOccupied(int i, int j) {
-		return getOccupied(i - 1, j - 1)
-				+ getOccupied(i - 1, j)
-				+ getOccupied(i - 1, j + 1)
-				+ getOccupied(i, j - 1)
-				+ getOccupied(i, j + 1)
-				+ getOccupied(i + 1, j - 1)
-				+ getOccupied(i + 1, j)
-				+ getOccupied(i + 1, j + 1);
+		return adjacencies.get(Pair.with(i, j))
+				.stream()
+				.mapToInt(p -> getOccupied(p.getValue0(), p.getValue1()))
+				.sum();
 	}
 
 	private int getOccupied(int i, int j) {
 		return get(i, j) == TAKEN ? 1 : 0;
 	}
 
-	private char get(int i, int j) {
+	protected char get(int i, int j) {
 		if (i < 0 || i >= height || j < 0 || j >= width) {
 			return BORDER;
 		}
