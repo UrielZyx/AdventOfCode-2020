@@ -28,6 +28,8 @@ import day10.Day10_1;
 import day10.Day10_2;
 import day11.Day11_1;
 import day11.Day11_2;
+import day12.Day12_1;
+import day12.Day12_2;
 
 public class Outputs {
 
@@ -72,6 +74,8 @@ public class Outputs {
 		testOutputs.put(Day10_2.class, Arrays.asList("8", "19208"));
 		testOutputs.put(Day11_1.class, Arrays.asList("37"));
 		testOutputs.put(Day11_2.class, Arrays.asList("26"));
+		testOutputs.put(Day12_1.class, Arrays.asList("25"));
+		testOutputs.put(Day12_2.class, Arrays.asList("286"));
 
 		outputs.put(Day1_1.class, "1007104");
 		outputs.put(Day1_2.class, "18847752");
@@ -95,5 +99,7 @@ public class Outputs {
 		outputs.put(Day10_2.class, "386869246296064");
 		outputs.put(Day11_1.class, "2319");
 		outputs.put(Day11_2.class, "2117");
+		outputs.put(Day12_1.class, "796");
+		outputs.put(Day12_2.class, "39446");
 	}
 }
