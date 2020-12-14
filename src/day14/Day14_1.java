@@ -8,8 +8,8 @@ import common.SerialLineAdventDay;
 public class Day14_1 extends SerialLineAdventDay {
 
 	private static final String MASK = "mask ";
-	String currentMask = "";
-	Map<Integer, Long> memory = new HashMap<>();
+	protected String currentMask = "";
+	protected Map<Long, Long> memory = new HashMap<>();
 
 	@Override
 	protected int getDay() {
@@ -39,22 +39,30 @@ public class Day14_1 extends SerialLineAdventDay {
 	}
 
 	private void updateMemory(String left, String right) {
-		Integer address = Integer.valueOf(left);
+		Long address = Long.valueOf(left);
 		Long value = Long.valueOf(right);
+		updateMemory(address, value);
+	}
+
+	protected void updateMemory(Long address, Long value) {
 		String maskedValue = currentMask;
 		String binaryValue = Long.toBinaryString(value);
 		int d = maskedValue.length() - binaryValue.length();
 		for (int i = 0; i < d; i++) {
 			if (maskedValue.charAt(i) == 'X') {
-				maskedValue = maskedValue.replaceFirst("X", "0");
+				maskedValue = replaceCharAtIndex(maskedValue, i, '0');
 			}
 		}
 		for (int i = 0; i < binaryValue.length(); i++) {
 			if (maskedValue.charAt(d + i) == 'X') {
-				maskedValue = maskedValue.replaceFirst("X", String.valueOf(binaryValue.charAt(i)));
+				maskedValue = replaceCharAtIndex(maskedValue, d + i, binaryValue.charAt(i));
 			}
 		}
 		memory.put(address, Long.valueOf(maskedValue, 2));
+	}
+
+	protected String replaceCharAtIndex(String str, int i, char c) {
+		return str.substring(0, i) + c + str.substring(i + 1);
 	}
 
 	@Override

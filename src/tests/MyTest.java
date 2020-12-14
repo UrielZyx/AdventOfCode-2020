@@ -29,8 +29,10 @@ public class MyTest {
 
 	private void testSingle(Class<? extends AdventDay> day, String expected, int i)
 			throws InstantiationException, IllegalAccessException {
-		String result = day.newInstance().test(i).orElse(null);
-		assertEquals("Bug in " + day.getSimpleName() + " test " + i + "!", expected, result);
+		if (expected != null) {
+			String result = day.newInstance().test(i).orElse(null);
+			assertEquals("Bug in " + day.getSimpleName() + " test " + i + "!", expected, result);
+		}
 	}
 
 	@Test
