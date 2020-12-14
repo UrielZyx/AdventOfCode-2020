@@ -4,7 +4,6 @@ import static java.math.BigInteger.*;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -37,6 +36,7 @@ public class Day13_2 extends Day13_1 {
 		// return String.valueOf(processRemaindersNaively());
 	}
 
+	// https://gadial.net/2012/09/12/chinese_remainder_theorem/
 	private BigInteger processRemaindersEfficiently() {
 		List<BigInteger> n = new ArrayList<>();
 		List<BigInteger> d = new ArrayList<>();
@@ -59,19 +59,6 @@ public class Day13_2 extends Day13_1 {
 		}
 
 		return result.mod(m);
-	}
-
-	private BigInteger processRemaindersNaively() {
-		moduli.sort(Comparator.reverseOrder());
-		BigInteger result = getRemainder(0);
-		BigInteger d = getModulus(0);
-		for (int i = 1; i < moduli.size(); i++) {
-			while (result.mod(getModulus(i)).compareTo(getRemainder(i)) != 0) {
-				result = result.add(d);
-			}
-			d = d.multiply(getModulus(i));
-		}
-		return result;
 	}
 
 	private BigInteger getRemainder(int i) {

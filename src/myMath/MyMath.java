@@ -21,8 +21,10 @@ public class MyMath {
 	}
 
 	/**
-	 * returns GCD and Bézout coefficients
+	 * returns GCD and Bézout coefficients.
 	 * 
+	 * Uses
+	 * https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm#Polynomial_extended_Euclidean_algorithm
 	 * 
 	 * @param x
 	 * @param y

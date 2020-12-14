@@ -21,7 +21,7 @@ public class Day11_1 extends MapAdventDay {
 	protected String processMap(List<List<Character>> map) {
 		Seating seating = createSeatings(map);
 		Set<String> visited = new HashSet<>();
-		for (int i = 0; !visited.contains(seating.getState()); i++) {
+		while (!visited.contains(seating.getState())) {
 			visited.add(seating.getState());
 			seating.iterate();
 		}
