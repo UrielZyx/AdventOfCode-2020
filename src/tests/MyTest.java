@@ -16,7 +16,9 @@ public class MyTest {
 		Outputs out = Outputs.getInstance();
 		Map<Class<? extends AdventDay>, List<String>> testOutputs = out.getTestOutputs();
 		for (Class<? extends AdventDay> day : testOutputs.keySet()) {
-			runTests(day, testOutputs.get(day));
+			if (out.isFast(day)) {
+				runTests(day, testOutputs.get(day));
+			}
 		}
 	}
 
@@ -40,7 +42,9 @@ public class MyTest {
 		Outputs out = Outputs.getInstance();
 		Map<Class<? extends AdventDay>, String> outputs = out.getOutputs();
 		for (Class<? extends AdventDay> day : outputs.keySet()) {
-			runDay(day, outputs.get(day));
+			if (out.isFast(day)) {
+				runDay(day, outputs.get(day));
+			}
 		}
 	}
 
