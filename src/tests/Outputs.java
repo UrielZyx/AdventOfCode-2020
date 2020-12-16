@@ -38,6 +38,8 @@ import day14.Day14_1;
 import day14.Day14_2;
 import day15.Day15_1;
 import day15.Day15_2;
+import day16.Day16_1;
+import day16.Day16_2;
 
 public class Outputs {
 
@@ -95,6 +97,8 @@ public class Outputs {
 		testOutputs.put(Day14_2.class, Arrays.asList(null, "208"));
 		testOutputs.put(Day15_1.class, Arrays.asList("436", "1", "10", "27", "78", "438", "1836"));
 		testOutputs.put(Day15_2.class, Arrays.asList("175594", "2578", "3544142", "261214", "6895259", "18", "362"));
+		testOutputs.put(Day16_1.class, Arrays.asList("71"));
+		testOutputs.put(Day16_2.class, Arrays.asList("seat: 14, row: 7, class: 1", "seat: 13, row: 11, class: 12"));
 
 		outputs.put(Day1_1.class, "1007104");
 		outputs.put(Day1_2.class, "18847752");
@@ -126,9 +130,11 @@ public class Outputs {
 		outputs.put(Day14_2.class, "3394509207186");
 		outputs.put(Day15_1.class, "206");
 		outputs.put(Day15_2.class, "955");
+		outputs.put(Day16_1.class, "20013");
+		outputs.put(Day16_2.class, "5977293343129");
 
-		slow.add(Day11_1.class);
-		slow.add(Day11_2.class);
+		// slow.add(Day11_1.class);
+		// slow.add(Day11_2.class);
 		slow.add(Day15_2.class);
 	}
 }
