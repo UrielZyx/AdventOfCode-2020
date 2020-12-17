@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import myMath.MyMath;
+import common.math.MyMath;
 
 public class Day13_2 extends Day13_1 {
 

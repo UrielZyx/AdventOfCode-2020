@@ -8,30 +8,15 @@ import java.util.stream.Collectors;
 
 import org.javatuples.Pair;
 
-import com.google.common.collect.ArrayListMultimap;
-import com.google.common.collect.Multimap;
+import common.dataStructures.Grid;
 
-public class Seating {
-
-	protected enum Direction {
-		N(0, 1), E(1, 0), W(-1, 0), S(0, -1), NE(1, 1), NW(-1, 1), SE(1, -1), SW(-1, -1);
-
-		public int i, j;
-
-		private Direction(int i, int j) {
-			this.i = i;
-			this.j = j;
-		}
-	}
+public class Seating extends Grid {
 
 	protected final static char FLOOR = '.';
 	protected final static char SEAT = 'L';
 	protected final static char TAKEN = '#';
-	protected final static char BORDER = 'X';
 
-	protected int height, width, limit;
-	protected List<List<Character>> seatings = new ArrayList<>();
-	protected Multimap<Pair<Integer, Integer>, Pair<Integer, Integer>> adjacencies = ArrayListMultimap.create();
+	protected int limit;
 
 	public Seating(List<List<Character>> map, int limit) {
 
@@ -41,31 +26,17 @@ public class Seating {
 		width = map.get(0).size();
 
 		for (int i = 0; i < height; i++) {
-			seatings.add(new ArrayList<>());
+			grid.add(new ArrayList<>());
 			for (int j = 0; j < width; j++) {
-				seatings.get(i).add(map.get(i).get(j));
+				grid.get(i).add(map.get(i).get(j));
 			}
 		}
 
 		calculateAdjacencies();
 	}
 
-	protected void calculateAdjacencies() {
-		for (int i = 0; i < height; i++) {
-			for (int j = 0; j < width; j++) {
-				for (Direction dir : Direction.values()) {
-					adjacencies.put(Pair.with(i, j), getAdjacency(i, j, dir));
-				}
-			}
-		}
-	}
-
-	protected Pair<Integer, Integer> getAdjacency(int i, int j, Direction dir) {
-		return Pair.with(i + dir.i, j + dir.j);
-	}
-
 	public String getState() {
-		return seatings
+		return grid
 				.stream()
 				.flatMap(List::stream)
 				.map(String::valueOf)
@@ -92,12 +63,12 @@ public class Seating {
 
 		while (!taken.isEmpty()) {
 			Pair<Integer, Integer> pos = taken.poll();
-			seatings.get(pos.getValue0()).set(pos.getValue1(), TAKEN);
+			grid.get(pos.getValue0()).set(pos.getValue1(), TAKEN);
 		}
 
 		while (!freed.isEmpty()) {
 			Pair<Integer, Integer> pos = freed.poll();
-			seatings.get(pos.getValue0()).set(pos.getValue1(), SEAT);
+			grid.get(pos.getValue0()).set(pos.getValue1(), SEAT);
 		}
 	}
 
@@ -110,12 +81,5 @@ public class Seating {
 
 	private int getOccupied(int i, int j) {
 		return get(i, j) == TAKEN ? 1 : 0;
-	}
-
-	protected char get(int i, int j) {
-		if (i < 0 || i >= height || j < 0 || j >= width) {
-			return BORDER;
-		}
-		return seatings.get(i).get(j);
 	}
 }
